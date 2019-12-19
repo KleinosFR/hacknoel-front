@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Button, Row, Col, Icon } from "react-materialize";
+import { Button, Row, Icon } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignature } from "@fortawesome/free-solid-svg-icons";
 import Container from "react-materialize/lib/Container";
@@ -16,13 +16,13 @@ function Push() {
  */
   return (
     <>
-      <Container>
-        <Row className="center-align ">
+      <Container style={{ marginTop: "250px" }}>
+        <Row className="center-align">
           <Popup
             modal
             trigger={
               <Button className style={{ width: "200px" }}>
-                <Icon>
+                <Icon left>
                   <FontAwesomeIcon icon={faSignature} />
                 </Icon>
                 Matin
@@ -60,12 +60,46 @@ function Push() {
           ) : null}
         </Row>
         <Row className="center-align">
-          <Button className style={{ width: "200px" }}>
-            <Icon>
-              <FontAwesomeIcon icon={faSignature} />
-            </Icon>
-            Après-midi
-          </Button>
+          <Popup
+            modal
+            trigger={
+              <Button className style={{ width: "200px" }}>
+                <Icon left>
+                  <FontAwesomeIcon icon={faSignature} />
+                </Icon>
+                Après-midi
+              </Button>
+            }
+            closeOnDocumentClick={false}
+          >
+            {close => (
+              <>
+                <SignaturePad
+                  ref={sigCanvas}
+                  canvasProps={{
+                    className: "signatureCanvas"
+                  }}
+                />
+                <button onClick={clear}>clear</button>
+                <button onClick={close}>close</button>
+                {/* <button onClick={save}>save</button> */}
+              </>
+            )}
+          </Popup>
+          <br />
+          <br />
+          {imageURL ? (
+            <img
+              src={imageURL}
+              alt="ma signature"
+              style={{
+                display: "block",
+                margin: "0 auto",
+                border: "1px solid black",
+                width: "150px"
+              }}
+            />
+          ) : null}
         </Row>
       </Container>
     </>
