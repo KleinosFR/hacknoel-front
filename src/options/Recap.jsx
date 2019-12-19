@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Modal, Button } from 'react-materialize';
-import Table from "./Table";
 import Tableau from "./Table";
 
 
