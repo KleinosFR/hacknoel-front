@@ -8,48 +8,46 @@ function Tableau() {
   
     return (
       <Table className="responsive">
+        <caption>Feuille d'émargement hebdomadaire</caption>
       <thead>
         <tr>
-          <th >Lundi</th>
-            <tr><th>Am</th><th>PM</th></tr>
-          <th > Mardi</th>
-          <th >Mercredi</th>
-          <th >Jeudi</th>
-          <th >Vendredi</th>
+          <th colspan="2" className="center-align">Lundi</th>
+          <th colspan="2" className="center-align"> Mardi</th>
+          <th colspan="2" className="center-align">Mercredi</th>
+          <th colspan="2" className="center-align">Jeudi</th>
+          <th colspan="2" className="center-align">Vendredi</th>
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th >AM</th>
+          <th >PM</th>
+          <th >AM</th>
+          <th >PM</th>
+          <th >AM</th>
+          <th >PM</th>
+          <th >AM</th>
+          <th >PM</th>
+          <th >AM</th>
+          <th >PM</th>         
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
-            Alvin
+          <img class="fas fa-check"></img>
           </td>
           <td>
-            Eclair
+            
           </td>
           <td>
-            $0.87
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Alan
+            
           </td>
           <td>
-            Jellybean
+            
           </td>
           <td>
-            $3.76
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Jonathan
-          </td>
-          <td>
-            Lollipop
-          </td>
-          <td>
-            $7.00
+            
           </td>
         </tr>
       </tbody>

@@ -1,8 +1,14 @@
 import React from "react";
-import ButtonOption from "../layout/ButtonOption"
+
+import LoginForm from "./LoginForm";
+import SignupForm from "../Signup/SignupForm";
 
 export default function Login() {
-    return <div>Ready for login regex
-        <ButtonOption/>
-    </div>;
+    return (
+        <div>
+            <LoginForm />
+    {/* <SignupForm />   */}
+        </div>
+    );
+
 }
