@@ -1,11 +1,15 @@
 import React from "react";
-import SignInForm from "./SignInForm";
-import SignSelect from "./SignSelect";
+import Header from "../layout/Header";
+import Footers from "../layout/Footers";
+import LoginForm from "./LoginForm";
+import SignupForm from "../Signup/SignupForm";
 
 export default function Login() {
     return (
         <div>
-            <SignSelect />
+            <Header />
+            <LoginForm />
+            <Footers />
         </div>
     );
 }

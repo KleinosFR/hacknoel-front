@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Row, Icon } from "react-materialize";
+import { Button, Container, Row, Icon, Col } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
@@ -16,6 +16,7 @@ function LoginForm() {
     };
 
     return (
+
         <Row>
             <Row style={{ textAlign: "center" }}>
                 <Button onClick={handleSignGithub}>
@@ -34,6 +35,7 @@ function LoginForm() {
                 </Button>
             </Row>
         </Row>
+
     );
 }
 
