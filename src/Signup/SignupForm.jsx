@@ -19,7 +19,6 @@ function SignupForm() {
 
     return (
         <Container>
-            <Row>
                 <form>
                     <Row>
                         <Col className="center-align"
@@ -42,7 +41,6 @@ function SignupForm() {
                         </Col>
                     </Row>
                 </form>
-            </Row>
         </Container>
     );
 }
