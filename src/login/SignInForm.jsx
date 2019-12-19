@@ -16,28 +16,24 @@ function LoginForm() {
     };
 
     return (
-        <Container>
-            <Row>
-                <form>
-                    <Row>
-                        <Button onClick={handleSignGithub}>
-                            <Icon left>
-                                <FontAwesomeIcon icon={faGithub} />
-                            </Icon>
-                            Sign in with Github
-                        </Button>
-                    </Row>
-                    <Row>
-                        <Button onClick={handleSignGoogle}>
-                            <Icon left>
-                                <FontAwesomeIcon icon={faGoogle} />
-                            </Icon>
-                            Sign in with Google
-                        </Button>
-                    </Row>
-                </form>
+        <Row>
+            <Row style={{ textAlign: "center" }}>
+                <Button onClick={handleSignGithub}>
+                    <Icon left>
+                        <FontAwesomeIcon icon={faGithub} />
+                    </Icon>
+                    Sign in with Github
+                </Button>
             </Row>
-        </Container>
+            <Row style={{ textAlign: "center" }}>
+                <Button onClick={handleSignGoogle}>
+                    <Icon left>
+                        <FontAwesomeIcon icon={faGoogle} />
+                    </Icon>
+                    Sign in with Google
+                </Button>
+            </Row>
+        </Row>
     );
 }
 
