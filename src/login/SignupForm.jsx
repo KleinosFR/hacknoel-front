@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, Container, Row, Icon } from "react-materialize";
+import { Button, Container, Row, Icon, Col } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
 
-function LoginForm() {
+function SignupForm() {
     const history = useHistory();
 
     const handleSignGithub = e => {
@@ -19,28 +19,36 @@ function LoginForm() {
 
     return (
         <Container>
-            <Row>
-                <form>
-                    <Row>
+            <form>
+                <Row>
+                    <Col
+                        className="center-align valign-wrapper"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGithub}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGithub} />
                             </Icon>
-                            Sign in with Github
+                            Sign up with Github
                         </Button>
-                    </Row>
-                    <Row>
+                    </Col>
+                    <Col
+                        className="center-align"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGoogle}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGoogle} />
                             </Icon>
-                            Sign in with Google
+                            Sign up with Google
                         </Button>
-                    </Row>
-                </form>
-            </Row>
+                    </Col>
+                </Row>
+            </form>
         </Container>
     );
 }
 
-export default LoginForm;
+export default SignupForm;
