@@ -1,5 +1,16 @@
 import React from "react";
+import Recap from "./Recap";
+import Oups from "./Oups";
 
-export default function Option() {
-    return <div>ready for options regex</div>;
+
+
+function Option() {
+    return ( <div>
+    <Recap/>
+    
+    <Oups />
+    </div>
+    )
 }
+
+export default Option
