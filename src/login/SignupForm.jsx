@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
 
-function LoginForm() {
+function SignupForm() {
     const history = useHistory();
 
     const handleSignGithub = e => {
@@ -19,30 +19,36 @@ function LoginForm() {
 
     return (
         <Container>
-                <form>
-                    <Row>
-                    <Col className="center-align " style={{marginTop:"15px"}}
-                    s={12}>
+            <form>
+                <Row>
+                    <Col
+                        className="center-align valign-wrapper"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGithub}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGithub} />
                             </Icon>
-                            Sign in with Github
+                            Sign up with Github
                         </Button>
-                        </Col>
-                    <Col className="center-align" style={{marginTop:"15px"}}
-                    s={12}>
+                    </Col>
+                    <Col
+                        className="center-align"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGoogle}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGoogle} />
                             </Icon>
-                            Sign in with Google
+                            Sign up with Google
                         </Button>
-                        </Col>
-                    </Row>
-                </form>
+                    </Col>
+                </Row>
+            </form>
         </Container>
     );
 }
 
-export default LoginForm;
+export default SignupForm;

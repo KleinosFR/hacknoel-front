@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
 
-function SignupForm() {
-    const history = useHistory();
-
+function LoginForm() {
     const handleSignGithub = e => {
         e.preventDefault();
         console.log("github method");
@@ -19,30 +17,36 @@ function SignupForm() {
 
     return (
         <Container>
-                <form>
-                    <Row>
-                        <Col className="center-align valign-wrapper" style={{marginTop:"15px"}}
-                    s={12}>
+            <form>
+                <Row>
+                    <Col
+                        className="center-align "
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGithub}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGithub} />
                             </Icon>
-                            Sign up with Github
+                            Sign in with Github
                         </Button>
-                        </Col>
-                        <Col className="center-align" style={{marginTop:"15px"}}
-                    s={12}>
+                    </Col>
+                    <Col
+                        className="center-align"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGoogle}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGoogle} />
                             </Icon>
-                            Sign up with Google
+                            Sign in with Google
                         </Button>
-                        </Col>
-                    </Row>
-                </form>
+                    </Col>
+                </Row>
+            </form>
         </Container>
     );
 }
 
-export default SignupForm;
+export default LoginForm;
