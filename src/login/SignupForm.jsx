@@ -19,28 +19,34 @@ function SignupForm() {
 
     return (
         <Container>
-                <form>
-                    <Row>
-                        <Col className="center-align"
-                    s={6}>
+            <form>
+                <Row>
+                    <Col
+                        className="center-align valign-wrapper"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGithub}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGithub} />
                             </Icon>
                             Sign up with Github
                         </Button>
-                        </Col>
-                        <Col className="center-align"
-                    s={6}>
+                    </Col>
+                    <Col
+                        className="center-align"
+                        style={{ marginTop: "15px" }}
+                        s={12}
+                    >
                         <Button onClick={handleSignGoogle}>
                             <Icon left>
                                 <FontAwesomeIcon icon={faGoogle} />
                             </Icon>
                             Sign up with Google
                         </Button>
-                        </Col>
-                    </Row>
-                </form>
+                    </Col>
+                </Row>
+            </form>
         </Container>
     );
 }
