@@ -3,9 +3,29 @@ import { Footer, Icon } from 'react-materialize';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTwitter, faLinkedin, faYoutube, faGithub } from "@fortawesome/free-brands-svg-icons";
 
+let phantom = {
+  display: 'block',
+  padding: '20px',
+  height: '60px',
+  width: '100%',
+}
+
+let style = {
+  backgroundColor: "#F8F8F8",
+  borderTop: "1px solid #E7E7E7",
+  textAlign: "center",
+  padding: "20px",
+  position: "fixed",
+  left: "0",
+  bottom: "0",
+  width: "100%",
+}
+
 function Footers() {
     return (
 <>
+<div style={phantom} />
+<div style={style}>
 <Footer
   className="example"
 >
@@ -35,6 +55,7 @@ function Footers() {
   </Icon>
 
 </Footer>
+</div>
 </>
     )
 }
