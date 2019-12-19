@@ -1,5 +1,10 @@
 import React from "react";
+import LoginForm from "./LoginForm";
 
 export default function Login() {
-    return <div>Ready for login regex</div>;
+    return (
+        <div>
+            <LoginForm />
+        </div>
+    );
 }
