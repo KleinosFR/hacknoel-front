@@ -16,36 +16,26 @@ function LoginForm() {
     };
 
     return (
-        <Container>
-            <form>
-                <Row>
-                    <Col
-                        className="center-align "
-                        style={{ marginTop: "15px" }}
-                        s={12}
-                    >
-                        <Button onClick={handleSignGithub}>
-                            <Icon left>
-                                <FontAwesomeIcon icon={faGithub} />
-                            </Icon>
-                            Sign in with Github
-                        </Button>
-                    </Col>
-                    <Col
-                        className="center-align"
-                        style={{ marginTop: "15px" }}
-                        s={12}
-                    >
-                        <Button onClick={handleSignGoogle}>
-                            <Icon left>
-                                <FontAwesomeIcon icon={faGoogle} />
-                            </Icon>
-                            Sign in with Google
-                        </Button>
-                    </Col>
-                </Row>
-            </form>
-        </Container>
+
+        <Row>
+            <Row style={{ textAlign: "center" }}>
+                <Button onClick={handleSignGithub}>
+                    <Icon left>
+                        <FontAwesomeIcon icon={faGithub} />
+                    </Icon>
+                    Sign in with Github
+                </Button>
+            </Row>
+            <Row style={{ textAlign: "center" }}>
+                <Button onClick={handleSignGoogle}>
+                    <Icon left>
+                        <FontAwesomeIcon icon={faGoogle} />
+                    </Icon>
+                    Sign in with Google
+                </Button>
+            </Row>
+        </Row>
+
     );
 }
 

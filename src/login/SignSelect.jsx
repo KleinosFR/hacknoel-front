@@ -11,11 +11,11 @@ function SignSelect() {
 
     return (
         <>
-            <Row classname="center-align">
+            <Row style={{ textAlign: "center" }}>
                 <Col s={6} classname="center-align">
                     <Button
                         style={{
-                            marginRight: "5px"
+                            margin: "5px"
                         }}
                         waves="light"
                         onClick={() => setSignUp(false)}
@@ -26,8 +26,11 @@ function SignSelect() {
                         </Icon>
                     </Button>
                 </Col>
-                <Col s={6}>
+                <Col s={6} classname="center-align">
                     <Button
+                        style={{
+                            margin: "5px"
+                        }}
                         node="button"
                         waves="light"
                         onClick={() => setSignUp(true)}
