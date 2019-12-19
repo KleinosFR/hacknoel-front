@@ -1,10 +1,11 @@
 import React from "react";
-import LoginForm from "./LoginForm";
+import SignInForm from "./SignInForm";
+import SignSelect from "./SignSelect";
 
 export default function Login() {
     return (
         <div>
-            <LoginForm />
+            <SignSelect />
         </div>
     );
 }

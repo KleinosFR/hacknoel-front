@@ -5,8 +5,6 @@ import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
 
 function LoginForm() {
-    const history = useHistory();
-
     const handleSignGithub = e => {
         e.preventDefault();
         console.log("github method");
