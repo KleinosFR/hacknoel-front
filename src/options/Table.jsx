@@ -1,6 +1,8 @@
 import React from "react";
 
-import { Table } from 'react-materialize';
+import { Table, Icon } from 'react-materialize';
+import { faCheck, faHandMiddleFinger } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 
 
@@ -35,10 +37,14 @@ function Tableau() {
       <tbody>
         <tr>
           <td>
-          <img class="fas fa-check"></img>
+          <Icon >
+              <FontAwesomeIcon icon={faCheck} />
+          </Icon>
           </td>
           <td>
-            
+          <Icon >
+              <FontAwesomeIcon icon={faHandMiddleFinger} />
+          </Icon>
           </td>
           <td>
             

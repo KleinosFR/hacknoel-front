@@ -31,7 +31,7 @@ function Recap() {
       preventScrolling: true,
       startingTop: '4%'
     }}
-    trigger={<Button node="button">RECAP</Button>}
+    trigger={<Button style={{width:"80px", marginBottom:"10px", marginTop:"10px"}}node="button">RECAP</Button>}
   >
     <Tableau/>
   </Modal>

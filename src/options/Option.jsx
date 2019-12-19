@@ -6,8 +6,7 @@ import Oups from "./Oups";
 
 function Option() {
     return ( <div>
-    <Recap/>
-    
+    <Recap/>    
     <Oups />
     </div>
     )
