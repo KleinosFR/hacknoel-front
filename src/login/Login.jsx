@@ -5,6 +5,7 @@ import Footers from "../layout/Footers";
 import SignSelect from "./SignSelect";
 
 export default function Login() {
+
     return (
         <div>
             <Form />
@@ -13,4 +14,5 @@ export default function Login() {
             <Footers />
         </div>
     );
+
 }
