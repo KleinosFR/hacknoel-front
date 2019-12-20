@@ -1,19 +1,29 @@
 import React from "react";
 import { Button } from "react-materialize";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 
-function ButtonLogOut() {
+import { removeToken } from "../reducers/actions";
+
+function ButtonLogOut({ logOut }) {
     const history = useHistory();
 
-    const handleDirectionOption = e => {
+    const handleLogOut = e => {
         e.preventDefault();
         history.push("/");
+        logOut();
     };
     return (
-        <Button onClick={handleDirectionOption} node="a" waves="light">
+        <Button onClick={handleLogOut} node="a" waves="light">
             Log Out
         </Button>
     );
 }
 
-export default ButtonLogOut;
+const mapdispatchToProps = dispatch => {
+    return {
+        logOut: () => dispatch(removeToken())
+    };
+};
+
+export default connect(null, mapdispatchToProps)(ButtonLogOut);

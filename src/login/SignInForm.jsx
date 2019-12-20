@@ -3,11 +3,17 @@ import { Button, Row, Icon } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 
-function LoginForm() {
+import { storeToken, setUser } from "../reducers/actions";
+
+function LoginForm({ storeToken, setUser, roles, isAuth }) {
+    let history = useHistory();
+
     const handleSignGithub = e => {
         e.preventDefault();
-        console.log("github method");
+        storeToken("JulesBonard");
+        history.push("/sign");
     };
 
     const handleSignGoogle = e => {
@@ -37,4 +43,18 @@ function LoginForm() {
     );
 }
 
-export default LoginForm;
+const mapDispatchToProps = dispatch => {
+    return {
+        storeToken: token => dispatch(storeToken(token)),
+        setUser: user => dispatch(setUser(user))
+    };
+};
+
+const mapStateToProps = state => {
+    return {
+        isAuth: state.authReducer.isAuth,
+        roles: state.userReducer.roles
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
