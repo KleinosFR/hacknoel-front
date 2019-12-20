@@ -6,7 +6,6 @@ import Option from "./options/Option";
 import LoginAdmin from "./admin/LoginAdmin";
 import Sign from "./sign/Sign";
 import BackOffice from "./admin/BackOffice";
-import Layout from "./layout/Layout";
 
 // TODO add custom route for auth
 

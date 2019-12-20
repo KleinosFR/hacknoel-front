@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Icon, Container, Row, Col } from "react-materialize";
+import { Button, Icon, Row, Col } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,7 +11,7 @@ function SignSelect() {
 
     return (
         <>
-            <Row style={{ textAlign: "center" , marginTop: "15px"}}>
+            <Row style={{ textAlign: "center", marginTop: "15px" }}>
                 <Col s={6} classname="center-align">
                     <Button
                         style={{
