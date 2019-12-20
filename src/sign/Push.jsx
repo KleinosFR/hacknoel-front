@@ -23,6 +23,10 @@ function Push() {
     const clearPM = () => sigCanvasPM.current.clear();
 
     const saveAM = async () => {
+        const img = sigCanvasAM.current
+            .getTrimmedCanvas()
+            .toDataURL("image/png");
+
         await setImageURLAM(
             sigCanvasAM.current.getTrimmedCanvas().toDataURL("image/png")
         );
@@ -32,7 +36,7 @@ function Push() {
             apiCall
                 .post("/signs", {
                     UserUuid: userId,
-                    image: imageURLAM
+                    image: img
                 })
                 .then(res => {})
                 .catch(err => {
@@ -50,8 +54,8 @@ function Push() {
         );
         apiCall
             .post("/signs", {
-                UserUuid: img,
-                image: imageURLPM
+                UserUuid: userId,
+                image: img
             })
             .then(res => {})
             .catch(err => {
@@ -117,7 +121,11 @@ function Push() {
                     <Popup
                         modal
                         trigger={
-                            <Button className style={{ width: "200px" }}>
+                            <Button
+                                className
+                                style={{ width: "200px" }}
+                                disabled={actualhour < 14 || actualhour > 17}
+                            >
                                 <Icon left>
                                     <FontAwesomeIcon icon={faSignature} />
                                 </Icon>
