@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Row, Icon } from "react-materialize";
+import { Button, Row, Icon, Modal } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useHistory } from "react-router-dom";
+import Form from "./Form"
 
 function SignupForm() {
     const history = useHistory();
@@ -20,15 +21,41 @@ function SignupForm() {
     return (
         <Row>
             <Row style={{ textAlign: "center" }}>
-                <Button onClick={handleSignGithub}>
-                    <Icon left>
-                        <FontAwesomeIcon icon={faGithub} />
-                    </Icon>
-                    Sign up with Github
-                </Button>
+                <Modal
+                    actions={[
+                        <Button flat modal="close" node="button" waves="green">Close</Button>
+                    ]}
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header="Inscription"
+                    id="modal-0"
+                    options={{
+                        dismissible: true,
+                        endingTop: '10%',
+                        inDuration: 250,
+                        onCloseEnd: null,
+                        onCloseStart: null,
+                        onOpenEnd: null,
+                        onOpenStart: null,
+                        opacity: 0.5,
+                        outDuration: 250,
+                        preventScrolling: true,
+                        startingTop: '4%'
+                    }}
+                    trigger={<Button onClick={handleSignGithub}>
+                        <Icon left>
+                            <FontAwesomeIcon icon={faGithub} />
+                        </Icon>
+                        Sign up with Github
+            </Button>}
+                >
+                    <Form />
+                </Modal>
+
+
             </Row>
             <Row style={{ textAlign: "center" }}>
-                <Button onClick={handleSignGoogle}>
+                <Button onClick={handleSignGoogle} disabled>
                     <Icon left>
                         <FontAwesomeIcon icon={faGoogle} />
                     </Icon>

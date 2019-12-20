@@ -26,7 +26,7 @@ function LoginForm() {
                 </Button>
             </Row>
             <Row style={{ textAlign: "center" }}>
-                <Button onClick={handleSignGoogle}>
+                <Button onClick={handleSignGoogle} disabled>
                     <Icon left>
                         <FontAwesomeIcon icon={faGoogle} />
                     </Icon>
