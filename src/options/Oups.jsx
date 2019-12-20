@@ -9,7 +9,7 @@ function Oups() {
     ]}
     bottomSheet={false}
     fixedFooter={false}
-    header="Options"
+    header="Oups"
     id="modal-0"
     options={{
       dismissible: true,
@@ -26,7 +26,7 @@ function Oups() {
     }}
     trigger={<Button style={{width:"80px"}} node="button">OUPS</Button>}
   >
-
+<img style={{ width: "100%" }} src="http://images.innoveduc.fr/symfony4/8-fixtures/fixtures_wtf_three.gif"></img>
   </Modal>
   </div>;
 }
