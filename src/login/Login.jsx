@@ -5,14 +5,11 @@ import Footers from "../layout/Footers";
 import SignSelect from "./SignSelect";
 
 export default function Login() {
-
-    return (
-        <div>
-            <Form />
-            <Header />
-            <SignSelect />
-            <Footers />
-        </div>
-    );
-
+  return (
+    <div>
+      <Header />
+      <SignSelect />
+      <Footers />
+    </div>
+  );
 }
