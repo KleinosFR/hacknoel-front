@@ -18,7 +18,8 @@ export default function LoginAdmin() {
             console.log(data);
             const user = data.filter(
                 user =>
-                    (user.email === inputLogin) & (user.password === inputPass)
+                    (user.username === inputLogin) &
+                    (user.password === inputPass)
             );
             console.log(user);
             if (user.length > 0) {
@@ -33,7 +34,7 @@ export default function LoginAdmin() {
         <Layout>
             <Container style={{ marginTop: "250px" }}>
                 <TextInput
-                    label="Email"
+                    label="Username"
                     onChange={e => setInputLogin(e.target.value)}
                 />
 

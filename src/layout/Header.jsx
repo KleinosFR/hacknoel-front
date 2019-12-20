@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, NavItem, Icon } from "react-materialize";
 import ButtonOption from "./ButtonOption";
+import ButtonLogOut from "./LogOut";
+import Buttons from "./Buttons";
 
 function Header() {
     return (
@@ -36,12 +38,8 @@ function Header() {
             <NavItem href="https://odyssey.wildcodeschool.com/">
                 Odyssey
             </NavItem>
-            <NavItem href="/pdf">
-                Pdf
-            </NavItem>
-            <NavItem>
-                <ButtonOption />
-            </NavItem>
+            <Buttons />
+
         </Navbar>
     );
 }
