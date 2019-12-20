@@ -7,6 +7,10 @@ import {
     faSurprise
 } from "@fortawesome/free-solid-svg-icons";
 
+
+import Emargements from "./TableEmargements";
+
+
 function Admin({ select }) {
     return (
         <>
@@ -40,6 +44,7 @@ function Admin({ select }) {
                     </a>
                 </SideNavItem>
             </SideNav>
+          <Emargements />
         </>
     );
 }
