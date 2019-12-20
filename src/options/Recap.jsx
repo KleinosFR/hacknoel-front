@@ -11,7 +11,7 @@ function Recap() {
        <div className="center-align">
         <Modal 
     actions={[
-      <Button flat modal="close" node="button" waves="green">Close</Button>
+      <Button  flat modal="close" node="button" waves="green">Close</Button>
     ]}
     bottomSheet={false}
     fixedFooter={false}
@@ -30,7 +30,7 @@ function Recap() {
       preventScrolling: true,
       startingTop: '4%'
     }}
-    trigger={<Button style={{width:"80px", marginBottom:"10px", marginTop:"10px"}}node="button">RECAP</Button>}
+    trigger={<Button style={{width:"80px", marginBottom:"50px", marginTop:"150px"}}node="button">RECAP</Button>}
   >
     <Tableau/>
   </Modal>
