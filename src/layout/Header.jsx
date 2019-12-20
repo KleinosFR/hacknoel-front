@@ -36,6 +36,9 @@ function Header() {
             <NavItem href="https://odyssey.wildcodeschool.com/">
                 Odyssey
             </NavItem>
+            <NavItem href="/pdf">
+                Pdf
+            </NavItem>
             <NavItem>
                 <ButtonOption />
             </NavItem>
