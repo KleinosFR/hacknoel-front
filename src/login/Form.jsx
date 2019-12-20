@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react';
 import { Button, Select, Icon} from 'react-materialize';
 import TextInput from 'react-materialize/lib/TextInput';
@@ -116,9 +117,9 @@ const [language,setLanguage] = useState("")
             </Select>
 
                 <Button>valider</Button>              
-            </form>
+          </form>
         </div>
-    )
+    );
 }
 
-export default Form
+export default Form;
