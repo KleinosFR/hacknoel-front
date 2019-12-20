@@ -1,15 +1,12 @@
 import React from "react";
 
-import Header from "../layout/Header";
-import Footers from "../layout/Footers";
 import SignSelect from "./SignSelect";
+import Layout from "../layout/Layout";
 
 export default function Login() {
-  return (
-    <div>
-      <Header />
-      <SignSelect />
-      <Footers />
-    </div>
-  );
+    return (
+        <Layout>
+            <SignSelect />
+        </Layout>
+    );
 }
