@@ -9,7 +9,7 @@ function Header() {
             brand={
                 <a
                     className="brand-logo"
-                    href="https://www.wildcodeschool.com/fr-FR"
+                    href="/"
                 >
                     <img
                         style={{ width: "100px" }}
