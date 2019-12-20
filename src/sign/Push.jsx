@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Button, Row, Icon } from "react-materialize";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignature } from "@fortawesome/free-solid-svg-icons";
@@ -7,9 +7,14 @@ import Popup from "reactjs-popup";
 import SignaturePad from "react-signature-canvas";
 import "./sigCanvas.css";
 
+import apiCall from "../ApiCall";
+
+const userId = "6eabe590-dc00-4edf-8bfe-51e6ccb202ed";
+
 function Push() {
     const [imageURLAM, setImageURLAM] = useState(null);
     const [imageURLPM, setImageURLPM] = useState(null);
+    const [actualhour, setactualhour] = useState(null);
 
     const sigCanvasAM = useRef({});
     const sigCanvasPM = useRef({});
@@ -17,19 +22,51 @@ function Push() {
     const clearAM = () => sigCanvasAM.current.clear();
     const clearPM = () => sigCanvasPM.current.clear();
 
-    const saveAM = () => {
-        setImageURLAM(
+    const saveAM = async () => {
+        const img = sigCanvasAM.current
+            .getTrimmedCanvas()
+            .toDataURL("image/png");
+
+        await setImageURLAM(
             sigCanvasAM.current.getTrimmedCanvas().toDataURL("image/png")
         );
-        console.log(
-            sigCanvasAM.current.getTrimmedCanvas().toDataURL("image/png")
-        );
+        const time = new Date();
+        const hour = time.getHours();
+        if (hour < 12) {
+            apiCall
+                .post("/signs", {
+                    UserUuid: userId,
+                    image: img
+                })
+                .then(res => {})
+                .catch(err => {
+                    alert("impossible d'envoyer la signature");
+                });
+        }
     };
 
-    const savePM = () =>
-        setImageURLPM(
+    const savePM = async () => {
+        const img = sigCanvasPM.current
+            .getTrimmedCanvas()
+            .toDataURL("image/png");
+        await setImageURLPM(
             sigCanvasPM.current.getTrimmedCanvas().toDataURL("image/png")
         );
+        apiCall
+            .post("/signs", {
+                UserUuid: userId,
+                image: img
+            })
+            .then(res => {})
+            .catch(err => {
+                alert("impossible d'envoyer la signature");
+            });
+    };
+
+    useEffect(() => {
+        const time = new Date();
+        setactualhour(time.getHours());
+    }, []);
 
     return (
         <>
@@ -38,7 +75,11 @@ function Push() {
                     <Popup
                         modal
                         trigger={
-                            <Button className style={{ width: "200px" }}>
+                            <Button
+                                className
+                                style={{ width: "200px" }}
+                                disabled={actualhour > 11}
+                            >
                                 <Icon left>
                                     <FontAwesomeIcon icon={faSignature} />
                                 </Icon>
@@ -55,9 +96,9 @@ function Push() {
                                         className: "signatureCanvas"
                                     }}
                                 />
-                                <button onClick={clearAM}>clear</button>
-                                <button onClick={close}>close</button>
-                                <button onClick={saveAM}>save</button>
+                                <Button onClick={clearAM}>reset</Button>
+                                <Button onClick={close}>fermer</Button>
+                                <Button onClick={saveAM}>envoyer</Button>
                             </>
                         )}
                     </Popup>
@@ -80,7 +121,11 @@ function Push() {
                     <Popup
                         modal
                         trigger={
-                            <Button className style={{ width: "200px" }}>
+                            <Button
+                                className
+                                style={{ width: "200px" }}
+                                disabled={actualhour < 14 || actualhour > 17}
+                            >
                                 <Icon left>
                                     <FontAwesomeIcon icon={faSignature} />
                                 </Icon>
@@ -97,9 +142,9 @@ function Push() {
                                         className: "signatureCanvas"
                                     }}
                                 />
-                                <button onClick={clearPM}>clear</button>
-                                <button onClick={close}>close</button>
-                                <button onClick={savePM}>save</button>
+                                <Button onClick={clearPM}>reset</Button>
+                                <Button onClick={close}>fermer</Button>
+                                <Button onClick={savePM}>envoyer</Button>
                             </>
                         )}
                     </Popup>
