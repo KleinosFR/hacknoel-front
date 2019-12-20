@@ -5,25 +5,36 @@ import { faCheck, faHandMiddleFinger } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from "axios";
 
-function Tableau() {
+import "./admin.css";
+
+function Emargements() {
     const [users, setUsers] = useState([]);
     const [signs, setSigns] = useState([]);
 
     useEffect(() => {
-        Axios.get("http://82.64.46.169:8001/users").then(res => {
-            setUsers(res.data);
-        });
+        Axios.get("http://82.64.46.169:8001/users")
+            .then(res => {
+                setUsers(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
     useEffect(() => {
-        Axios.get("http://82.64.46.169:8001/signs").then(res => {
-            setSigns(res.data);
-        });
+        Axios.get("http://82.64.46.169:8001/signs")
+            .then(res => {
+                setSigns(res.data[0]);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }, []);
 
     return (
         <>
             <Table className="responsive">
+                <caption>Feuille d'émargement hebdomadaire</caption>
                 <thead>
                     <tr>
                         <th colspan="2" className="center-align"></th>
@@ -77,68 +88,38 @@ function Tableau() {
                                 </td>
 
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faCheck} />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon
-                                            icon={faHandMiddleFinger}
-                                        />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
 
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faCheck} />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon
-                                            icon={faHandMiddleFinger}
-                                        />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
 
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faCheck} />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon
-                                            icon={faHandMiddleFinger}
-                                        />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
 
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faCheck} />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon
-                                            icon={faHandMiddleFinger}
-                                        />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
 
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faCheck} />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
                                 <td>
-                                    <Icon>
-                                        <FontAwesomeIcon
-                                            icon={faHandMiddleFinger}
-                                        />
-                                    </Icon>
+                                    <img src={signs.image} />
                                 </td>
                             </tr>
                         );
@@ -148,4 +129,4 @@ function Tableau() {
         </>
     );
 }
-export default Tableau;
+export default Emargements;
