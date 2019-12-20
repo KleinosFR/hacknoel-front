@@ -19,6 +19,7 @@ function SignupForm() {
 
     return (
         <Row>
+
         <Row style={{ textAlign: "center" }}>
             <Button onClick={handleSignGithub}>
                 <Icon left>
