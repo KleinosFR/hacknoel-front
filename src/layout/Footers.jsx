@@ -2,6 +2,7 @@ import React from "react";
 import { Footer, Icon, Row, Col } from 'react-materialize';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTwitter, faLinkedin, faYoutube, faGithub } from "@fortawesome/free-brands-svg-icons";
+import Container from "react-materialize/lib/Container";
 
 let style = {
   backgroundColor: "#F8F8F8",
@@ -35,28 +36,30 @@ function Footers() {
   <p className="grey-text text-lighten-4">
     Made with ❤ by WCS #1 students
   </p>
-  <Row className="center-align">
-    <Col s={12}>
-  <Icon left>
-    <a style={{color:"white"}} href="https://www.facebook.com/WildCodeSchool/"><FontAwesomeIcon icon={faFacebook} /></a>
-  </Icon>
-  <Icon left>
-    <a style={{color:"white"}} href="https://www.instagram.com/jujusursonskate/?igshid=1kb8mvpigeib9"><FontAwesomeIcon icon={faInstagram} /></a>
-  </Icon>
-  <Icon left>
-  <a style={{color:"white"}} href="https://twitter.com/wildcodeschool"><FontAwesomeIcon icon={faTwitter} /></a>
-  </Icon>
-  <Icon left>
-  <a style={{color:"white"}} href="https://www.linkedin.com/school/wild-codes-chool/"><FontAwesomeIcon icon={faLinkedin} /></a>
-  </Icon>
-  <Icon left>
-  <a style={{color:"white"}} href="https://www.youtube.com/channel/UCi99G_0QPx5sYsK8zdvQzfw"><FontAwesomeIcon icon={faYoutube} /></a>
-  </Icon>
-  <Icon left>
-  <a style={{color:"white"}} href="https://github.com/WildCodeSchool"><FontAwesomeIcon icon={faGithub} /></a>
-  </Icon>
-  </Col>
-  </Row>
+  <Container>
+    <Row>
+      <Col s={12} style={{display: 'flex',  justifyContent:'center', alignItems:'center'}} >
+        <Icon left>
+          <a style={{color:"white"}} href="https://www.facebook.com/WildCodeSchool/"><FontAwesomeIcon icon={faFacebook} /></a>
+        </Icon>
+        <Icon left>
+          <a style={{color:"white"}} href="https://www.instagram.com/jujusursonskate/?igshid=1kb8mvpigeib9"><FontAwesomeIcon icon={faInstagram} /></a>
+        </Icon>
+        <Icon left>
+          <a style={{color:"white"}} href="https://twitter.com/wildcodeschool"><FontAwesomeIcon icon={faTwitter} /></a>
+        </Icon>
+        <Icon left>
+          <a style={{color:"white"}} href="https://www.linkedin.com/school/wild-codes-chool/"><FontAwesomeIcon icon={faLinkedin} /></a>
+        </Icon>
+        <Icon left>
+          <a style={{color:"white"}} href="https://www.youtube.com/channel/UCi99G_0QPx5sYsK8zdvQzfw"><FontAwesomeIcon icon={faYoutube} /></a>
+        </Icon>
+        <Icon left>
+          <a style={{color:"white"}} href="https://github.com/WildCodeSchool"><FontAwesomeIcon icon={faGithub} /></a>
+        </Icon>
+      </Col>
+    </Row>
+  </Container>
 </Footer>
 </dave>
 </>
