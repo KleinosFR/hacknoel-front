@@ -17,10 +17,14 @@ function Push() {
     const clearAM = () => sigCanvasAM.current.clear();
     const clearPM = () => sigCanvasPM.current.clear();
 
-    const saveAM = () =>
+    const saveAM = () => {
         setImageURLAM(
             sigCanvasAM.current.getTrimmedCanvas().toDataURL("image/png")
         );
+        console.log(
+            sigCanvasAM.current.getTrimmedCanvas().toDataURL("image/png")
+        );
+    };
 
     const savePM = () =>
         setImageURLPM(
