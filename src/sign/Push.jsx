@@ -26,15 +26,19 @@ function Push() {
         await setImageURLAM(
             sigCanvasAM.current.getTrimmedCanvas().toDataURL("image/png")
         );
-        apiCall
-            .post("/signs", {
-                UserUuid: userId,
-                image: imageURLAM
-            })
-            .then(res => {})
-            .catch(err => {
-                alert("impossible d'envoyer la signature");
-            });
+        const time = new Date();
+        const hour = time.getHours();
+        if (hour < 12) {
+            apiCall
+                .post("/signs", {
+                    UserUuid: userId,
+                    image: imageURLAM
+                })
+                .then(res => {})
+                .catch(err => {
+                    alert("impossible d'envoyer la signature");
+                });
+        }
     };
 
     const savePM = async () => {
@@ -58,7 +62,6 @@ function Push() {
     useEffect(() => {
         const time = new Date();
         setactualhour(time.getHours());
-        console.log(time.toLocaleTimeString("fr-FR"));
     }, []);
 
     return (
@@ -71,7 +74,7 @@ function Push() {
                             <Button
                                 className
                                 style={{ width: "200px" }}
-                                disabled={actualhour >= 12}
+                                disabled={actualhour > 11}
                             >
                                 <Icon left>
                                     <FontAwesomeIcon icon={faSignature} />
