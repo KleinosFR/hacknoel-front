@@ -19,23 +19,24 @@ function SignupForm() {
 
     return (
         <Row>
-            <Row style={{ textAlign: "center" }}>
-                <Button onClick={handleSignGithub}>
-                    <Icon left>
-                        <FontAwesomeIcon icon={faGithub} />
-                    </Icon>
-                    Sign up with Github
-                </Button>
-            </Row>
-            <Row style={{ textAlign: "center" }}>
-                <Button onClick={handleSignGoogle}>
-                    <Icon left>
-                        <FontAwesomeIcon icon={faGoogle} />
-                    </Icon>
-                    Sign up with Google
-                </Button>
-            </Row>
+
+        <Row style={{ textAlign: "center" }}>
+            <Button onClick={handleSignGithub}>
+                <Icon left>
+                    <FontAwesomeIcon icon={faGithub} />
+                </Icon>
+                Sign up with Github
+            </Button>
         </Row>
+        <Row style={{ textAlign: "center" }}>
+            <Button onClick={handleSignGoogle}>
+                <Icon left>
+                    <FontAwesomeIcon icon={faGoogle} />
+                </Icon>
+                Sign up with Google
+            </Button>
+        </Row>
+    </Row>
     );
 }
 
